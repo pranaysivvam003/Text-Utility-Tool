@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Text Utility Tool</title>
+<link href="Images/logo.png" rel="icon">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<center>
+<div class="tabs">
+<button id="charTab" class="active">Converter</button>
+<button id="compareTab">Compare Text</button>
+</div>
+<div class="container">
+<!-- Character Converter -->
+<div id="charConverter">
+<h2>Character &#126; HTML Code</h2>
+<div class="text-adjust">
+<textarea id="charInput" placeholder="Paste your code here"></textarea>
+<textarea id="charOutput" placeholder="Converted output" readonly></textarea>
+</div>
+<button onclick="convertToHTMLEntities()">Convert</button>
+<button onclick="clearCharFields()">Clear</button>
+<button onclick="copyCharOutput()">Copy</button>
+<button onclick="decodeHTML()">Decode</button>
+</div>
+<!-- Text Comparison -->
+<div id="textComparer" class="hidden">
+<h2>Smart Text Comparison</h2>
+<div class="text-adjust">
+<textarea id="version1" placeholder="Paste the version 1* text here"></textarea>
+<textarea id="version2" placeholder="Paste the version 2** text here"></textarea>
+</div>
+
+<button onclick="compareText()">Compare</button>
+<button onclick="clearCompareFields()">Clear</button>
+</div>
+<div class="output" id="comparisonResult">
+Here you will get the output
+</div>
+<div>
+<h3 class="points">Some Useful Points</h3>
+<div>
+<div class="footer-inndiv" style="text-align: left;">
+<h4>Character Conversion</h4>
+<ul>
+<li>
+Step 1: Paste your code in the left container
+</li>
+<li>
+Step 2: Click on <strong>Convert</strong>
+</li>
+<li>
+Step 3: Your will get the final output in the right container
+</li>
+<li>
+<strong>Decode:</strong> Convert HTML Code to the Special Characters.
+</li>
+</ul>
+</div>
+<div class="footer-inndiv" style="text-align: left;">
+<h4>Text Comparision</h4>
+<ul>
+<li>
+Version 1: Your original text (with mistakes).
+</li>
+<li>
+Version 2: The correct final version you want.
+</li>
+<li>
+Fixing: Click on <strong>Compare</strong>, it will compare V1 and V2, fix the errors to get <strong>V2 as a final outout</strong>.
+</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div style="font-size: 12px;">
+Note: Use desktop for the best experience
+</div>
+<div class="footer">
+<div>
+<p>Developed by <a href="https://pranaysivvam003.github.io/My-Website/" target="_blank" style="text-decoration: none; font-weight: 500; color: rgb(0, 132, 255);">Pranay Kumar Sivvam</a></p>
+</div>
+</div>
+<script src="script.js"></script>
+</center>
+</body>
+</html>
