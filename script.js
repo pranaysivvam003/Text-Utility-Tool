@@ -12,31 +12,35 @@ document.getElementById("compareTab").onclick = () => {
   document.getElementById("charTab").classList.remove("active");
 };
 
-// Character converter logic (UPDATED — only this changed)
+// Character converter logic (UPDATED per V2: skip . , * / \ ( ) %)
 function convertToHTMLEntities() {
   const input = document.getElementById("charInput").value;
-  // Use Array.from to correctly handle Unicode surrogate pairs (emojis)
   const chars = Array.from(input);
+  const SKIP = new Set(['.', ',', '*', '/', '\\', '(', ')', '%',':',';']);
+
   const output = chars.map(c => {
-    // keep letters, digits and whitespace as-is
-    if (/^[A-Za-z0-9\s]$/.test(c)) {
+    // keep letters, digits, whitespace, and the specified simple characters
+    if (/^[A-Za-z0-9\s]$/.test(c) || SKIP.has(c)) {
       return c;
     }
     // convert everything else (symbols, punctuation, emojis, icons) to numeric entity
     return `&#${c.codePointAt(0)};`;
   }).join('');
+
   document.getElementById("charOutput").value = output;
 }
+
 function decodeHTML() {
-    const input = document.getElementById('charInput').value.trim();
-    if (!input) return;
+  const input = document.getElementById('charInput').value.trim();
+  if (!input) return;
 
-    const temp = document.createElement('textarea');
-    temp.innerHTML = input;
-    const decoded = temp.value;
+  const temp = document.createElement('textarea');
+  temp.innerHTML = input;
+  const decoded = temp.value;
 
-    document.getElementById('charOutput').value = decoded;
+  document.getElementById('charOutput').value = decoded;
 }
+
 function clearCharFields() {
   document.getElementById("charInput").value = "";
   document.getElementById("charOutput").value = "";
@@ -44,19 +48,29 @@ function clearCharFields() {
 
 function copyCharOutput() {
   const outputField = document.getElementById("charOutput");
-  // If it's a textarea it can be selected and copied
   outputField.select();
   outputField.setSelectionRange(0, 99999); // for mobile
   document.execCommand("copy");
 }
 
-// Word-based diff for text comparison (UNCHANGED)
+// Word-based diff for text comparison (UNCHANGED except identical check)
 function compareText() {
-  const a = document.getElementById("version1").value.trim().split(/\s+/);
-  const b = document.getElementById("version2").value.trim().split(/\s+/);
+  const raw1 = document.getElementById("version1").value;
+  const raw2 = document.getElementById("version2").value;
+
+  // NEW in V2: show popup if texts are identical
+  if (raw1 === raw2) {
+    alert("Two texts are identical");
+    document.getElementById("comparisonResult").textContent = "Two texts are identical";
+    return;
+  }
+
+  const a = raw1.trim().split(/\s+/);
+  const b = raw2.trim().split(/\s+/);
   const diff = wordDiff(a, b);
   document.getElementById("comparisonResult").innerHTML = formatDiff(diff);
 }
+
 function clearCompareFields() {
   document.getElementById("version1").value = "";
   document.getElementById("version2").value = "";
