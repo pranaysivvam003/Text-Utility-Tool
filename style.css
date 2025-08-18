@@ -1,40 +1,40 @@
-    *{
-      box-sizing:border-box;
-      font-family:Segoe UI,sans-serif;
-    }
-    body{
-      margin:0;
-      padding:20px;
-      background:#ffffff;
-      color:#000000;
-    }
-    .tabs{
-      display:flex;
-      justify-content:center;
-      backdrop-filter: blur(17px);
-      padding-top: 8px;
-      padding-bottom: 8px;
-      background: rgba(0, 0, 0, 0.1);
+*{
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  margin:0;
+  padding:20px;
+  background:#ffffff;
+  color:#000000;
+}
+.tabs{
+  display:flex;
+  justify-content:center;
+  backdrop-filter: blur(17px);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-border: 1px solid rgb(198, 198, 198);
+  border: 1px solid rgb(198, 198, 198);
   border-radius: 10px;
   gap: 10px;
   max-width: 960px;
   width: 100%;
-    }
-    
-    .tabs button{
-      padding:12px 20px;
-      border:none;
-      cursor:pointer;
-      background:#f6f6f6;
-      color: #000000;
-      border-top: 1px solid #ffffff;
-      border-left: 1px solid #ffffff;
-      box-shadow: rgba(255, 255, 255, 0.2) 2.95px 2.95px 2.6px;
-    }
-    .tabs button:hover {
+}
+
+.tabs button{
+  padding:12px 20px;
+  border:none;
+  cursor:pointer;
+  background:#f6f6f6;
+  color: #000000;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  box-shadow: rgba(255, 255, 255, 0.2) 2.95px 2.95px 2.6px;
+}
+.tabs button:hover {
   background: #d0d0d0; 
   color: #000000; 
   border: 1px solid #000000;
@@ -57,73 +57,73 @@ border: 1px solid rgb(198, 198, 198);
   top: 60px;
 }
 
-    .tabs button.active{
-      background:#000000;
-      color:#ffffff;
-      box-shadow: none;
-    }
-    .container{
-      max-width:960px;
-      width: 100%;
-      margin:20px auto;
-      background: rgba(0, 0, 0, 0.1);
-      padding:20px;
-      border-radius:8px;
-      border: 1px solid rgb(198, 198, 198);
-    }
-    .hidden{
-      display:none;
-    }
-    textarea{
-      width:49%;
-      height:300px;
-      min-width: 260px;
-      padding:10px;
-      border:1px solid #ccc;
-      border-radius:6px;
-      margin-bottom:10px;
-      resize:vertical;
-      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    }
-  .text-adjust{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2%;
-  }
-    button{
-      margin-right:10px;
-      padding:10px 16px;
-      border:none;
-      border-radius:6px;
-      background:#ffffff;
-      color:#000000;
-      cursor:pointer;
-    }
-    button:hover{
-      background:#000000;
-      color: #ffffff;
-    }
-    .output{
-      padding:10px;
-      margin-top: 20px;
-      background:#f1f1f1;
-      color: #000000;
-      border-radius:6px;
-      min-height:60px;
-      white-space:pre-wrap;
-      border: 1px solid black;
-    }
-    .added{
-      background:#c8e6c9;
-    }
-    .removed{
-      background:#ffcdd2;
-      text-decoration:line-through;
-    }
-    .unchanged{
-      color:#002139;
-    }
+.tabs button.active{
+  background:#000000;
+  color:#ffffff;
+  box-shadow: none;
+}
+.container{
+  max-width:960px;
+  width: 100%;
+  margin:20px auto;
+  background: rgba(0, 0, 0, 0.1);
+  padding:20px;
+  border-radius:8px;
+  border: 1px solid rgb(198, 198, 198);
+}
+.hidden{
+  display:none;
+}
+textarea{
+  width:49%;
+  height:300px;
+  min-width: 260px;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  margin-bottom:10px;
+  resize:vertical;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.text-adjust{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+button{
+  margin-right:10px;
+  padding:10px 16px;
+  border:none;
+  border-radius:6px;
+  background:#ffffff;
+  color:#000000;
+  cursor:pointer;
+}
+button:hover{
+  background:#000000;
+  color: #ffffff;
+}
+.output{
+  padding:10px;
+  margin-top: 20px;
+  background:#f1f1f1;
+  color: #000000;
+  border-radius:6px;
+  min-height:60px;
+  white-space:pre-wrap;
+  border: 1px solid black;
+}
+.added{
+  background:#c8e6c9;
+}
+.removed{
+  background:#ffcdd2;
+  text-decoration:line-through;
+}
+.unchanged{
+  color:#010101;
+}
 .points {
   color: #000000;
   font-size: 20px;
@@ -152,7 +152,7 @@ border: 1px solid rgb(198, 198, 198);
   color: #ffffff;
 }
 h2{
-color: #000000;
+  color: #000000;
 }
 .footer-inndiv{
   text-align: left;
