@@ -16,8 +16,8 @@ document.getElementById("compareTab").onclick = () => {
 function convertToHTMLEntities() {
   const input = document.getElementById("charInput").value;
   const chars = Array.from(input);
-  const SKIP = new Set(['.', ',', '*', '/', '\\', '(', ')', '%',':',';', '&', '$', '!', '@', '#', '^','-', '_', '+', '=', '?', '<', '>', '{', '}', '"', '\', '//']);
-
+  const SKIP = new Set(['.', ',', '*', '/', '\\', '(', ')', '%', ':', ';','&', '$', '!', '@', '#', '^', '-', '_', '+', '=', '?', '<', '>', '{', '}', '"', '\'', '//']);
+  
   const output = chars.map(c => {
     // keep letters, digits, whitespace, and the specified simple characters
     if (/^[A-Za-z0-9\s]$/.test(c) || SKIP.has(c)) {
